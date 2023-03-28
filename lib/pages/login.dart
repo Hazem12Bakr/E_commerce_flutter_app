@@ -1,6 +1,5 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:e_commerce_app/shared/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -17,17 +16,32 @@ class Login extends StatelessWidget {
               const SizedBox(
                 height: 65,
               ),
-              MyTextField(
-                textInputTypee: TextInputType.emailAddress,
-                isPassword: false,
-                hinttextt: "Enter your E-mail : ",
+TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  obscureText: false,
+                  decoration: InputDecoration(
+                    hintText: "Enter your E-mail : ",
+                    // To delete borders
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: Divider.createBorderSide(context),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.grey,
+                      ),
+                    ),
+                    // fillColor: Colors.red,
+                    filled: true,
+                    contentPadding: const EdgeInsets.all(8),
+                  )),
 
 
-              ),
+
+             
               const SizedBox(
                 height: 33,
               ),
-              MyTextField(),
+             
             ],
           ),
         ),
