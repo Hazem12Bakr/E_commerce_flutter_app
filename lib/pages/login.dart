@@ -56,6 +56,16 @@ class Login extends StatelessWidget {
                 height: 33,
               ),
 
+              Row(
+                children: [
+                  Text("dont have an account? "),
+                  TextButton(
+   onPressed: (){},
+   child: Text('Sign up', style: TextStyle(color: Colors.black)),)
+                ],
+              )
+
+
             ],
           ),
         ),
