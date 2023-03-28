@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:e_commerce_app/shared/colors.dart';
 import 'package:e_commerce_app/shared/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -40,16 +41,21 @@ class Login extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.orange),
+                  backgroundColor: MaterialStateProperty.all(BTNgreen),
                   padding: MaterialStateProperty.all(EdgeInsets.all(12)),
                   shape: MaterialStateProperty.all(RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8))),
                 ),
                 child: Text(
-                  "click here",
+                  "Sign in",
                   style: TextStyle(fontSize: 19),
                 ),
               ),
+
+              const SizedBox(
+                height: 33,
+              ),
+
             ],
           ),
         ),
