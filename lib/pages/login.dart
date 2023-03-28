@@ -51,21 +51,20 @@ class Login extends StatelessWidget {
                   style: TextStyle(fontSize: 19),
                 ),
               ),
-
               const SizedBox(
                 height: 33,
               ),
-
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text("dont have an account? "),
                   TextButton(
-   onPressed: (){},
-   child: Text('Sign up', style: TextStyle(color: Colors.black)),)
+                    onPressed: () {},
+                    child:
+                        Text('Sign up', style: TextStyle(color: Colors.black)),
+                  )
                 ],
               )
-
-
             ],
           ),
         ),
