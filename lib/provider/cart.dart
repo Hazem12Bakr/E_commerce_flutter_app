@@ -9,7 +9,7 @@ double price = 0;
 
 add(Item product){
   selectedProducts.add(product);
-
+  price += product.price.round();
   notifyListeners();
 }
 
