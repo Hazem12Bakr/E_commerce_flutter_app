@@ -61,50 +61,74 @@ class Details extends StatelessWidget {
             height: 16,
           ),
           Row(
+            mainAxisAlignment:MainAxisAlignment.spaceAround ,
             children: [
               Container(
                 padding: EdgeInsets.all(4),
                 child: Text(
                   "New",
-                  style: TextStyle(fontSize: 12),
+                  style: TextStyle(fontSize: 15),
                 ),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 255, 129, 129),
                   borderRadius: BorderRadius.circular(4),
                 ),
               ),
+              SizedBox(
+                    width: 8,
+                  ),
               Row(
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
                   Icon(
                     Icons.star,
-                    size: 23,
+                    size: 26,
                     color: Color.fromARGB(255, 255, 191, 0),
                   ),
                   Icon(
                     Icons.star,
-                    size: 23,
+                    size: 26,
                     color: Color.fromARGB(255, 255, 191, 0),
                   ),
                   Icon(
                     Icons.star,
-                    size: 23,
+                    size: 26,
                     color: Color.fromARGB(255, 255, 191, 0),
                   ),
                   Icon(
                     Icons.star,
-                    size: 23,
+                    size: 26,
                     color: Color.fromARGB(255, 255, 191, 0),
                   ),
                   Icon(
                     Icons.star,
-                    size: 23,
+                    size: 26,
                     color: Color.fromARGB(255, 255, 191, 0),
                   ),
                 ],
               ),
+              SizedBox(
+                    width: 66,
+                  ),
+              Row(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  Icon(
+                    Icons.edit_location,
+                    size: 26,
+                    color: Color.fromARGB(168, 3, 65, 27),
+                  ),
+                  SizedBox(
+                    width: 3,
+                  ),
+                  Text(
+                    "Flower Shop",
+                    style: TextStyle(fontSize: 19),
+                  ),
+                ],
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
