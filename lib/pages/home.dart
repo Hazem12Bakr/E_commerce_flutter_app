@@ -1,14 +1,11 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, unused_label, dead_code
 
 import 'package:e_commerce_app/model/items.dart';
+import 'package:e_commerce_app/pages/details_screen.dart';
 import 'package:e_commerce_app/shared/colors.dart';
 import 'package:flutter/material.dart';
 
-
-
 class Home extends StatelessWidget {
-  
-
   const Home({super.key});
 
   @override
@@ -25,7 +22,14 @@ class Home extends StatelessWidget {
             itemCount: items.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Details(product: items[index]),
+                    ),
+                  );
+                },
                 child: GridTile(
                   child: Stack(children: [
                     Positioned(
