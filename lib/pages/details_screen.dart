@@ -47,89 +47,111 @@ class Details extends StatelessWidget {
         backgroundColor: appbarGreen,
         title: Text("Details Screen"),
       ),
-      body: Column(
-        children: [
-          Image.asset("assets/img/car7.jpg"),
-          SizedBox(
-            height: 11,
-          ),
-          Text(
-            "\$ 400.99",
-            style: TextStyle(fontSize: 20),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Row(
-            mainAxisAlignment:MainAxisAlignment.spaceAround ,
-            children: [
-              Container(
-                padding: EdgeInsets.all(4),
-                child: Text(
-                  "New",
-                  style: TextStyle(fontSize: 15),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset("assets/img/car7.jpg"),
+            SizedBox(
+              height: 11,
+            ),
+            Text(
+              "\$ 400.99",
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(4),
+                  child: Text(
+                    "New",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 129, 129),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
                 ),
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 255, 129, 129),
-                  borderRadius: BorderRadius.circular(4),
+                SizedBox(
+                  width: 8,
                 ),
-              ),
-              SizedBox(
-                    width: 8,
+                Row(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    Icon(
+                      Icons.star,
+                      size: 26,
+                      color: Color.fromARGB(255, 255, 191, 0),
+                    ),
+                    Icon(
+                      Icons.star,
+                      size: 26,
+                      color: Color.fromARGB(255, 255, 191, 0),
+                    ),
+                    Icon(
+                      Icons.star,
+                      size: 26,
+                      color: Color.fromARGB(255, 255, 191, 0),
+                    ),
+                    Icon(
+                      Icons.star,
+                      size: 26,
+                      color: Color.fromARGB(255, 255, 191, 0),
+                    ),
+                    Icon(
+                      Icons.star,
+                      size: 26,
+                      color: Color.fromARGB(255, 255, 191, 0),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: 66,
+                ),
+                Row(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    Icon(
+                      Icons.edit_location,
+                      size: 26,
+                      color: Color.fromARGB(168, 3, 65, 27),
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                      "Flower Shop",
+                      style: TextStyle(fontSize: 19),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: Text(
+                    "Details : ",
+                    style: TextStyle(fontSize: 22),
+                    textAlign: TextAlign.start,
                   ),
-              Row(
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  Icon(
-                    Icons.star,
-                    size: 26,
-                    color: Color.fromARGB(255, 255, 191, 0),
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 26,
-                    color: Color.fromARGB(255, 255, 191, 0),
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 26,
-                    color: Color.fromARGB(255, 255, 191, 0),
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 26,
-                    color: Color.fromARGB(255, 255, 191, 0),
-                  ),
-                  Icon(
-                    Icons.star,
-                    size: 26,
-                    color: Color.fromARGB(255, 255, 191, 0),
-                  ),
-                ],
-              ),
-              SizedBox(
-                    width: 66,
-                  ),
-              Row(
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  Icon(
-                    Icons.edit_location,
-                    size: 26,
-                    color: Color.fromARGB(168, 3, 65, 27),
-                  ),
-                  SizedBox(
-                    width: 3,
-                  ),
-                  Text(
-                    "Flower Shop",
-                    style: TextStyle(fontSize: 19),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                Text(
+                  " to another. This is a four-wheeler used by individuals or family members. We all use cars in our daily lives to go from one place to another for work. A car is a beautiful vehicle that has comfortable seats, AC, and windows. ",
+                  style: TextStyle(fontSize: 18),
+                  maxLines: 3,
+                  overflow: TextOverflow.fade,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
