@@ -18,6 +18,11 @@ class Home extends StatelessWidget {
     Item(imgpath: "assets/img/car1.jpg", price: 12.99),
     Item(imgpath: "assets/img/car2.jpg", price: 12.99),
     Item(imgpath: "assets/img/car3.jpg", price: 12.99),
+    Item(imgpath: "assets/img/car4.jpg", price: 12.99),
+    Item(imgpath: "assets/img/car5.jpg", price: 12.99),
+    Item(imgpath: "assets/img/car6.jpg", price: 12.99),
+    Item(imgpath: "assets/img/car7.jpg", price: 12.99),
+    Item(imgpath: "assets/img/car8.jpg", price: 12.99),
   ];
 
   Home({super.key});
@@ -46,7 +51,7 @@ class Home extends StatelessWidget {
                       left: 0,
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(55),
-                          child: Image.asset("assets/img/car1.jpg")),
+                          child: Image.asset(items[index].imgpath)),
                     ),
                   ]),
                   footer: GridTileBar(
