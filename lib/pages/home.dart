@@ -10,16 +10,17 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView.builder(
- gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-  crossAxisCount: 2,
-  childAspectRatio: 3 / 2,
-  crossAxisSpacing: 10,
-  mainAxisSpacing: 33),
- itemCount: 4,
- itemBuilder: (BuildContext context, int index) {
-    return Container( );
- }),
-
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 3 / 2,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 33),
+          itemCount: 4,
+          itemBuilder: (BuildContext context, int index) {
+            return GridTile(
+              child:Image.asset("assets/img/pic1.jpg.jpg") ,
+            );
+          }),
       drawer: Drawer(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
