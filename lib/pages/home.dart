@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, unused_label, dead_code
 
 import 'package:e_commerce_app/shared/colors.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +9,17 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: GridView.builder(
+ gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+  crossAxisCount: 2,
+  childAspectRatio: 3 / 2,
+  crossAxisSpacing: 10,
+  mainAxisSpacing: 33),
+ itemCount: 4,
+ itemBuilder: (BuildContext context, int index) {
+    return Container( );
+ }),
+
       drawer: Drawer(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -60,7 +71,6 @@ class Home extends StatelessWidget {
         ),
       ),
     );
-    // ignore: dead_code
     appBar:
     AppBar(
       actions: [
