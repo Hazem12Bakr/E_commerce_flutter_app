@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:e_commerce_app/shared/appbar.dart';
+import 'package:e_commerce_app/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,6 +14,7 @@ class CheckOut extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: appbarGreen,
         title: Text("checkout screen"),
         actions: [
           ProductsAndPrice()
