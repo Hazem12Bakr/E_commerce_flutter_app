@@ -15,14 +15,14 @@ class Item {
 
 class Home extends StatelessWidget {
   final List<Item> items = [
-    Item(imgpath: "assets/img/car1.jpg", price: 12.99),
-    Item(imgpath: "assets/img/car2.jpg", price: 12.99),
-    Item(imgpath: "assets/img/car3.jpg", price: 12.99),
-    Item(imgpath: "assets/img/car4.jpg", price: 12.99),
-    Item(imgpath: "assets/img/car5.jpg", price: 12.99),
-    Item(imgpath: "assets/img/car6.jpg", price: 12.99),
-    Item(imgpath: "assets/img/car7.jpg", price: 12.99),
-    Item(imgpath: "assets/img/car8.jpg", price: 12.99),
+    Item(imgpath: "assets/img/car1.jpg", price: 520.99),
+    Item(imgpath: "assets/img/car2.jpg", price: 420.99),
+    Item(imgpath: "assets/img/car3.jpg", price: 420.99),
+    Item(imgpath: "assets/img/car4.jpg", price: 400.99),
+    Item(imgpath: "assets/img/car5.jpg", price: 400.99),
+    Item(imgpath: "assets/img/car6.jpg", price: 500.99),
+    Item(imgpath: "assets/img/car7.jpg", price: 780.99),
+    Item(imgpath: "assets/img/car8.jpg", price: 600.99),
   ];
 
   Home({super.key});
