@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 
 class Cart with ChangeNotifier{
 
-List selectedProducts = [
-
-];
+List selectedProducts = [];
 
 add(Item product){
   selectedProducts.add(product);
+
+  notifyListeners();
 }
 
 }

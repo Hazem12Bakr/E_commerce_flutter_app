@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last, unused_label, dead_code
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, unused_label, dead_code, unnecessary_brace_in_string_interps, non_constant_identifier_names
 
 import 'package:e_commerce_app/model/items.dart';
 import 'package:e_commerce_app/pages/details_screen.dart';
@@ -46,15 +46,14 @@ class Home extends StatelessWidget {
                   ]),
                   footer: GridTileBar(
 // backgroundColor: Color.fromARGB(66, 73, 127, 110),
-                    trailing: Consumer<Cart>(
-  builder: ((context, classInstancee, child) {
-  return IconButton(
-                        color: Color.fromARGB(255, 62, 94, 70),
-                        onPressed: () {
-                          
-                        },
-                        icon: Icon(Icons.add));
-})),
+                    trailing: Consumer<Cart>(builder: ((context, cartt, child) {
+                      return IconButton(
+                          color: Color.fromARGB(255, 62, 94, 70),
+                          onPressed: () {
+                            cartt.add(items[index]);
+                          },
+                          icon: Icon(Icons.add));
+                    })),
 
                     leading: Text("\$12.99"),
 
@@ -118,26 +117,29 @@ class Home extends StatelessWidget {
         actions: [
           Row(
             children: [
-              Stack(
-                children: [
-                  Positioned(
-                    bottom: 24,
-                    child: Container(
-                      child: Text(
-                        "0",
-                        style: TextStyle(
-                            fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
+              Consumer<Cart>(builder: ((context, CartInstancee, child) {
+                return Stack(
+                  children: [
+                    Positioned(
+                      bottom: 24,
+                      child: Container(
+                        child: Text(
+                          "${CartInstancee.selectedProducts.length}",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Color.fromARGB(255, 0, 0, 0)),
+                        ),
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(211, 164, 255, 193),
+                            shape: BoxShape.circle),
                       ),
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(211, 164, 255, 193),
-                          shape: BoxShape.circle),
                     ),
-                  ),
-                  IconButton(
-                      onPressed: () {}, icon: Icon(Icons.add_shopping_cart)),
-                ],
-              ),
+                    IconButton(
+                        onPressed: () {}, icon: Icon(Icons.add_shopping_cart)),
+                  ],
+                );
+              })),
               Padding(
                 padding: const EdgeInsets.only(right: 11.0),
                 child: Text(
