@@ -3,6 +3,7 @@
 import 'package:e_commerce_app/model/items.dart';
 import 'package:e_commerce_app/pages/details_screen.dart';
 import 'package:e_commerce_app/provider/cart.dart';
+import 'package:e_commerce_app/shared/appbar.dart';
 import 'package:e_commerce_app/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,6 +13,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cartt = Provider.of<Cart>(context);
     return Scaffold(
         body: Padding(
           padding: const EdgeInsets.only(top: 22),
@@ -47,14 +49,14 @@ class Home extends StatelessWidget {
                     footer: GridTileBar(
 // backgroundColor: Color.fromARGB(66, 73, 127, 110),
                       trailing:
-                          Consumer<Cart>(builder: ((context, cartt, child) {
-                        return IconButton(
+                          
+                         IconButton(
                             color: Color.fromARGB(255, 62, 94, 70),
                             onPressed: () {
                               cartt.add(items[index]);
                             },
-                            icon: Icon(Icons.add));
-                      })),
+                            icon: Icon(Icons.add)),
+                      
 
                       leading: Text("\$12.99"),
 
@@ -115,48 +117,16 @@ class Home extends StatelessWidget {
           ),
         ),
         appBar: AppBar(
+          // ignore: prefer_const_literals_to_create_immutables
           actions: [
-            Consumer<Cart>(
-              builder: ((context, classInstancee, child) {
-                return Row(children: [
-                  Stack(
-                    children: [
-                      Positioned(
-                        bottom: 24,
-                        child: Container(
-                          child: Text(
-                            "${classInstancee.selectedProducts.length}",
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Color.fromARGB(255, 0, 0, 0)),
-                          ),
-                          padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              color: Color.fromARGB(211, 164, 255, 193),
-                              shape: BoxShape.circle),
-                        ),
-                      ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.add_shopping_cart)),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 11.0),
-                    child: Text(
-                      "\$ ${classInstancee.price}",
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                ]);
-              }),
-            )
+            
+                 ProductsAndPrice()
+              
+            
           ],
         ));
 
-    backgroundColor:
-    appbarGreen;
-    title:
-    Text("Home");
+    backgroundColor:appbarGreen;
+    title:Text("Home");
   }
 }
