@@ -14,6 +14,12 @@ class Home extends StatelessWidget {
           // ignore: prefer_const_literals_to_create_immutables
           children: [
             UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/img/pic1.jpg"),
+                    fit: BoxFit.cover
+                    ),
+              ),
               currentAccountPicture: CircleAvatar(
                   radius: 55,
                   backgroundImage: AssetImage("assets/img/pic2.jpg")),
