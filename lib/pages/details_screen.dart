@@ -3,8 +3,15 @@
 import 'package:e_commerce_app/shared/colors.dart';
 import 'package:flutter/material.dart';
 
-class Details extends StatelessWidget {
-  const Details({super.key});
+class Details extends StatefulWidget {
+  
+
+  @override
+  State<Details> createState() => _DetailsState();
+}
+
+class _DetailsState extends State<Details> {
+  bool isShowmore = true;
 
   @override
   Widget build(BuildContext context) {
@@ -145,8 +152,22 @@ class Details extends StatelessWidget {
                 Text(
                   " to another. This is a four-wheeler used by individuals or family members. We all use cars in our daily lives to go from one place to another for work. A car is a beautiful vehicle that has comfortable seats, AC, and windows. ",
                   style: TextStyle(fontSize: 18),
-                  maxLines: 3,
+                  maxLines: isShowmore? 3 : null,
                   overflow: TextOverflow.fade,
+                ),
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      isShowmore = !isShowmore;
+                    });
+                  },
+                  child: Text(
+                    isShowmore? "Show more":"Show less",
+                  style: TextStyle(
+                    fontSize: 18,
+                    ),
+                  
+                  ),
                 ),
               ],
             ),
