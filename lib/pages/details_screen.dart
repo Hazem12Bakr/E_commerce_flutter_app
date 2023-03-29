@@ -1,10 +1,13 @@
 // ignore_for_file: unused_label, prefer_const_constructors, sort_child_properties_last
 
+import 'package:e_commerce_app/model/items.dart';
 import 'package:e_commerce_app/shared/colors.dart';
 import 'package:flutter/material.dart';
 
 class Details extends StatefulWidget {
   
+Item product;
+Details({required this.product});
 
   @override
   State<Details> createState() => _DetailsState();
@@ -57,12 +60,12 @@ class _DetailsState extends State<Details> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset("assets/img/car7.jpg"),
+            Image.asset(widget.product.imgpath),
             SizedBox(
               height: 11,
             ),
             Text(
-              "\$ 400.99",
+              "\$ ${widget.product.price}",
               style: TextStyle(fontSize: 20),
             ),
             SizedBox(
