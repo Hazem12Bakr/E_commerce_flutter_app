@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import, prefer_const_constructors
 
+import 'package:e_commerce_app/pages/checkout.dart';
 import 'package:e_commerce_app/pages/details_screen.dart';
 import 'package:e_commerce_app/pages/login.dart';
 import 'package:e_commerce_app/pages/home.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       create: (context) {return Cart();},
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home:Home(),
+        home:CheckOut(),
       ),
     );
   }
