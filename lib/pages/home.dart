@@ -11,95 +11,93 @@ class Home extends StatelessWidget {
     return Scaffold(
       drawer: Drawer(
         child: Column(
-          // ignore: prefer_const_literals_to_create_immutables
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            UserAccountsDrawerHeader(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/img/pic1.jpg"),
-                    fit: BoxFit.cover
-                    ),
-              ),
-              currentAccountPicture: CircleAvatar(
-                  radius: 55,
-                  backgroundImage: AssetImage("assets/img/pic2.jpg")),
-              accountEmail: Text("hazem@yahoo.com",
-              style: TextStyle(
-                color: Color.fromARGB(255, 21, 113, 30)),
-                ),
-              accountName: Text("Hazem A.Bakr",
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 21, 113, 30),
-                  )),
-            ),
-          
-          ListTile(
-   title: Text("Home"),
-   leading: Icon(Icons.home),
-   onTap: () { }
- ),
-  
- ListTile(
-   title: Text("My products"),
-   leading: Icon(Icons.add_shopping_cart),
-   onTap: () { }
- ),
-
- ListTile(
-   title: Text("About"),
-   leading: Icon(Icons.help_center),
-   onTap: () { }
- ),
-
- ListTile(
-   title: Text("Logout"),
-   leading: Icon(Icons.exit_to_app),
-   onTap: () { }
- ),
-  
-
- ],
- ),
-          
-        ),
-      );
-      appBar: AppBar(
-        actions: [
-          Row(
-            children: [
-              Stack(
-                children: [
-                  Positioned(
-                    bottom: 24,
-                    child: Container(
-                      child: Text(
-                        "8",
-                        style: TextStyle(
-                            fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
-                      ),
-                      padding: EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(211, 164, 255, 193),
-                          shape: BoxShape.circle),
-                    ),
+            Column(
+              children: [
+                UserAccountsDrawerHeader(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("assets/img/pic1.jpg"),
+                        fit: BoxFit.cover),
                   ),
-                  IconButton(
-                      onPressed: () {}, icon: Icon(Icons.add_shopping_cart)),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 11.0),
-                child: Text(
-                  "\$ 13",
-                  style: TextStyle(fontSize: 12),
+                  currentAccountPicture: CircleAvatar(
+                      radius: 55,
+                      backgroundImage: AssetImage("assets/img/pic2.jpg")),
+                  accountEmail: Text(
+                    "hazem@yahoo.com",
+                    style: TextStyle(color: Color.fromARGB(255, 21, 113, 30)),
+                  ),
+                  accountName: Text("Hazem A.Bakr",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 21, 113, 30),
+                      )),
                 ),
-              ),
-            ],
-          ),
-        ],
-        backgroundColor: appbarGreen,
-        title: Text("Home"),
+                ListTile(
+                    title: Text("Home"),
+                    leading: Icon(Icons.home),
+                    onTap: () {}),
+                ListTile(
+                    title: Text("My products"),
+                    leading: Icon(Icons.add_shopping_cart),
+                    onTap: () {}),
+                ListTile(
+                    title: Text("About"),
+                    leading: Icon(Icons.help_center),
+                    onTap: () {}),
+                ListTile(
+                    title: Text("Logout"),
+                    leading: Icon(Icons.exit_to_app),
+                    onTap: () {}),
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 12),
+              child: Text("Developed by Hazem A.Bakr © 2023",
+                  style: TextStyle(fontSize: 16)),
+            )
+          ],
+        ),
       ),
-    
+    );
+    // ignore: dead_code
+    appBar:
+    AppBar(
+      actions: [
+        Row(
+          children: [
+            Stack(
+              children: [
+                Positioned(
+                  bottom: 24,
+                  child: Container(
+                    child: Text(
+                      "8",
+                      style: TextStyle(
+                          fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
+                    ),
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(211, 164, 255, 193),
+                        shape: BoxShape.circle),
+                  ),
+                ),
+                IconButton(
+                    onPressed: () {}, icon: Icon(Icons.add_shopping_cart)),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 11.0),
+              child: Text(
+                "\$ 13",
+                style: TextStyle(fontSize: 12),
+              ),
+            ),
+          ],
+        ),
+      ],
+      backgroundColor: appbarGreen,
+      title: Text("Home"),
+    );
   }
 }
