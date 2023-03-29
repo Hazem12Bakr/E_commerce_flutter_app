@@ -9,6 +9,23 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                  radius: 55,
+                  backgroundImage: AssetImage("assets/img/pic1.jpg")),
+              accountEmail: Text("hazem@yahoo.com"),
+              accountName: Text("Hazem A.Bakr",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                  )),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         actions: [
           Row(
