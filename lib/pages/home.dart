@@ -117,7 +117,7 @@ class Home extends StatelessWidget {
                     bottom: 24,
                     child: Container(
                       child: Text(
-                        "8",
+                        "0",
                         style: TextStyle(
                             fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
                       ),
@@ -134,7 +134,7 @@ class Home extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(right: 11.0),
                 child: Text(
-                  "\$ 13",
+                  "\$ 0",
                   style: TextStyle(fontSize: 12),
                 ),
               ),
