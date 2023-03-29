@@ -1,4 +1,4 @@
-// ignore_for_file: unused_label, prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: unused_label, prefer_const_constructors, sort_child_properties_last, must_be_immutable
 
 import 'package:e_commerce_app/model/items.dart';
 import 'package:e_commerce_app/shared/colors.dart';
