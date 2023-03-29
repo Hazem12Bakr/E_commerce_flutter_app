@@ -3,8 +3,24 @@
 import 'package:e_commerce_app/shared/colors.dart';
 import 'package:flutter/material.dart';
 
+class Item {
+  String imgpath;
+  double price;
+
+  Item({
+    required this.imgpath,
+    required this.price,
+  });
+}
+
 class Home extends StatelessWidget {
-  const Home({super.key});
+  final List<Item> items = [
+    Item(imgpath: "assets/img/car1.jpg", price: 12.99),
+    Item(imgpath: "assets/img/car2.jpg", price: 12.99),
+    Item(imgpath: "assets/img/car3.jpg", price: 12.99),
+  ];
+
+  Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,23 +33,32 @@ class Home extends StatelessWidget {
                 childAspectRatio: 3 / 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 33),
-            itemCount: 4,
+            itemCount: items.length,
             itemBuilder: (BuildContext context, int index) {
               return GestureDetector(
-                onTap:() {},
+                onTap: () {},
                 child: GridTile(
-                  child: Stack(
-                    children: [
-                      Positioned(
+                  child: Stack(children: [
+                    Positioned(
                       top: -3,
                       bottom: -9,
                       right: 0,
                       left: 0,
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(55),
-                        child: Image.asset("assets/img/car1.jpg")),
+                          borderRadius: BorderRadius.circular(55),
+                          child: Image.asset("assets/img/car1.jpg")),
                     ),
-                    ]
+                  ]),
+                  footer: GridTileBar(
+// backgroundColor: Color.fromARGB(66, 73, 127, 110),
+                    trailing: IconButton(
+                        color: Color.fromARGB(255, 62, 94, 70),
+                        onPressed: () {},
+                        icon: Icon(Icons.add)),
+
+                    leading: Text("\$12.99"),
+
+                    title: Text(""),
                   ),
                 ),
               );
@@ -89,45 +114,43 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-    
-    appBar:
-    AppBar(
-      actions: [
-        Row(
-          children: [
-            Stack(
-              children: [
-                Positioned(
-                  bottom: 24,
-                  child: Container(
-                    child: Text(
-                      "8",
-                      style: TextStyle(
-                          fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
+      appBar: AppBar(
+        actions: [
+          Row(
+            children: [
+              Stack(
+                children: [
+                  Positioned(
+                    bottom: 24,
+                    child: Container(
+                      child: Text(
+                        "8",
+                        style: TextStyle(
+                            fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
+                      ),
+                      padding: EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(211, 164, 255, 193),
+                          shape: BoxShape.circle),
                     ),
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(211, 164, 255, 193),
-                        shape: BoxShape.circle),
                   ),
-                ),
-                IconButton(
-                    onPressed: () {}, icon: Icon(Icons.add_shopping_cart)),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(right: 11.0),
-              child: Text(
-                "\$ 13",
-                style: TextStyle(fontSize: 12),
+                  IconButton(
+                      onPressed: () {}, icon: Icon(Icons.add_shopping_cart)),
+                ],
               ),
-            ),
-          ],
-        ),
-      ],
-      backgroundColor: appbarGreen,
-      title: Text("Home"),
-    ),
+              Padding(
+                padding: const EdgeInsets.only(right: 11.0),
+                child: Text(
+                  "\$ 13",
+                  style: TextStyle(fontSize: 12),
+                ),
+              ),
+            ],
+          ),
+        ],
+        backgroundColor: appbarGreen,
+        title: Text("Home"),
+      ),
     );
   }
 }
