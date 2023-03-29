@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
           itemCount: 4,
           itemBuilder: (BuildContext context, int index) {
             return GridTile(
-              child:Image.asset("assets/img/pic1.jpg.jpg") ,
+              child:Image.asset("assets/img/pic1.jpg") ,
             );
           }),
       drawer: Drawer(
