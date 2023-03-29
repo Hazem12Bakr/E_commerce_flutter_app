@@ -18,7 +18,7 @@ class Home extends StatelessWidget {
           itemCount: 4,
           itemBuilder: (BuildContext context, int index) {
             return GridTile(
-              child:Image.asset("assets/img/pic1.jpg") ,
+              child: ClipRRect(child: Image.asset("assets/img/car1.jpg")),
             );
           }),
       drawer: Drawer(
@@ -71,7 +71,7 @@ class Home extends StatelessWidget {
           ],
         ),
       ),
-    );
+    
     appBar:
     AppBar(
       actions: [
@@ -109,6 +109,7 @@ class Home extends StatelessWidget {
       ],
       backgroundColor: appbarGreen,
       title: Text("Home"),
+    ),
     );
   }
 }
