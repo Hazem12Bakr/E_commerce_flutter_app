@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, unused_label, dead_code, unnecessary_brace_in_string_interps, non_constant_identifier_names
 
 import 'package:e_commerce_app/model/items.dart';
+import 'package:e_commerce_app/pages/checkout.dart';
 import 'package:e_commerce_app/pages/details_screen.dart';
 import 'package:e_commerce_app/provider/cart.dart';
 import 'package:e_commerce_app/shared/appbar.dart';
@@ -93,11 +94,25 @@ class Home extends StatelessWidget {
                   ListTile(
                       title: Text("Home"),
                       leading: Icon(Icons.home),
-                      onTap: () {}),
+                      onTap: () {
+                        Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Home(),
+                      ),
+                    );
+                      }),
                   ListTile(
                       title: Text("My products"),
                       leading: Icon(Icons.add_shopping_cart),
-                      onTap: () {}),
+                      onTap: () {
+                        Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CheckOut(),
+                      ),
+                    );
+                      }),
                   ListTile(
                       title: Text("About"),
                       leading: Icon(Icons.help_center),
