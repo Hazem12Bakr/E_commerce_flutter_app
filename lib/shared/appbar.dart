@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
+import 'package:e_commerce_app/pages/checkout.dart';
 import 'package:e_commerce_app/provider/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,7 +31,16 @@ class ProductsAndPrice extends StatelessWidget {
                     shape: BoxShape.circle),
               ),
             ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.add_shopping_cart)),
+            IconButton(
+              onPressed: () {
+                Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CheckOut(),
+                      ),
+                    );
+              }, 
+              icon: Icon(Icons.add_shopping_cart)),
           ],
         ),
         Padding(
