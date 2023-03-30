@@ -20,4 +20,11 @@ notifyListeners();
 
 }
 
+
+// to reach products easily 
+get itemCount {
+  return selectedProducts.length;
+}
+
+
 }
