@@ -13,4 +13,11 @@ add(Item product){
   notifyListeners();
 }
 
+delete(Item product){
+  selectedProducts.remove(product);
+  price -= product.price.round();
+notifyListeners();
+
+}
+
 }
