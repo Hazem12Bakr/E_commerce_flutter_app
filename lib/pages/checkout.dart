@@ -16,38 +16,51 @@ class CheckOut extends StatelessWidget {
 
     final cartt = Provider.of<Cart>(context);
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: appbarGreen,
-        title: Text("checkout screen"),
-        actions: [
-          ProductsAndPrice()
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: SizedBox(
-          height: 600,
-          child: ListView.builder(
-            padding: const EdgeInsets.all(8),
-            itemCount:cartt.selectedProducts.length,
-            
-            itemBuilder: (BuildContext context, int index) {
-              return Card(
-                child: ListTile(
-                  title: Text(cartt.selectedProducts[index].name),
-                  subtitle: Text("${cartt.selectedProducts[index].price} - ${cartt.selectedProducts[index].location}"),
-                  leading: CircleAvatar(
-                  backgroundImage: AssetImage(cartt.selectedProducts[index].imgpath),
-                  ),
-                  
-                  trailing: IconButton(
-                  onPressed: () {}, 
-                  icon: Icon(Icons.remove),
-                  ),
-                ),
-              );
-            }
+        appBar: AppBar(
+          backgroundColor: appbarGreen,
+          title: Text("checkout screen"),
+          actions: [ProductsAndPrice()],
         ),
-          ),
-      ));
+        body: Column(
+          children: [
+            SingleChildScrollView(
+              child: SizedBox(
+                height: 600,
+                child: ListView.builder(
+                    padding: const EdgeInsets.all(8),
+                    itemCount: cartt.selectedProducts.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Card(
+                        child: ListTile(
+                          title: Text(cartt.selectedProducts[index].name),
+                          subtitle: Text(
+                              "${cartt.selectedProducts[index].price} - ${cartt.selectedProducts[index].location}"),
+                          leading: CircleAvatar(
+                            backgroundImage:
+                                AssetImage(cartt.selectedProducts[index].imgpath),
+                          ),
+                          trailing: IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.remove),
+                          ),
+                        ),
+                      );
+                    }),
+              ),
+            ),
+          
+          ElevatedButton(
+   onPressed: (){},
+   style: ButtonStyle(
+     backgroundColor: MaterialStateProperty.all(BTNpink),
+     padding: MaterialStateProperty.all(EdgeInsets.all(12)),
+     shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+  ),
+   child: Text("Pay \$ ${cartt.price}",
+    style: TextStyle(fontSize: 19),),
+),
+
+          ],
+        ));
   }
 }
