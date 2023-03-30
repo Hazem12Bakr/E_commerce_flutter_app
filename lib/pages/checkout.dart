@@ -6,14 +6,11 @@ import 'package:e_commerce_app/shared/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-
-
 class CheckOut extends StatelessWidget {
   const CheckOut({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     final cartt = Provider.of<Cart>(context);
     return Scaffold(
         appBar: AppBar(
@@ -36,11 +33,13 @@ class CheckOut extends StatelessWidget {
                           subtitle: Text(
                               "${cartt.selectedProducts[index].price} - ${cartt.selectedProducts[index].location}"),
                           leading: CircleAvatar(
-                            backgroundImage:
-                                AssetImage(cartt.selectedProducts[index].imgpath),
+                            backgroundImage: AssetImage(
+                                cartt.selectedProducts[index].imgpath),
                           ),
                           trailing: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              
+                            },
                             icon: Icon(Icons.remove),
                           ),
                         ),
@@ -48,18 +47,19 @@ class CheckOut extends StatelessWidget {
                     }),
               ),
             ),
-          
-          ElevatedButton(
-   onPressed: (){},
-   style: ButtonStyle(
-     backgroundColor: MaterialStateProperty.all(BTNpink),
-     padding: MaterialStateProperty.all(EdgeInsets.all(12)),
-     shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
-  ),
-   child: Text("Pay \$ ${cartt.price}",
-    style: TextStyle(fontSize: 19),),
-),
-
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(BTNpink),
+                padding: MaterialStateProperty.all(EdgeInsets.all(12)),
+                shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8))),
+              ),
+              child: Text(
+                "Pay \$${cartt.price}",
+                style: TextStyle(fontSize: 19),
+              ),
+            ),
           ],
         ));
   }
