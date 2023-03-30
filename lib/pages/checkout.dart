@@ -34,7 +34,9 @@ class CheckOut extends StatelessWidget {
               return Card(
                 child: ListTile(
                   subtitle: Text("test"),
-                  leading: CircleAvatar(backgroundImage: AssetImage("assets/img/car8.jpg"),),
+                  leading: CircleAvatar(
+                  backgroundImage: AssetImage(cartt.selectedProducts[index].imgpath),
+                  ),
                   title: Text("test"),
                   trailing: IconButton(
                   onPressed: () {}, 
