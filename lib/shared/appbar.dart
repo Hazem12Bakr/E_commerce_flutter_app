@@ -21,7 +21,7 @@ class ProductsAndPrice extends StatelessWidget {
               bottom: 24,
               child: Container(
                 child: Text(
-                  "${cartt.selectedProducts.length}",
+                  "${cartt.itemCount}",
                   style: TextStyle(
                       fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
                 ),
