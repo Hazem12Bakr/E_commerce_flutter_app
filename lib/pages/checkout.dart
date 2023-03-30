@@ -28,6 +28,7 @@ class CheckOut extends StatelessWidget {
         child: ListView.builder(
           padding: const EdgeInsets.all(8),
         //  itemCount:cartt.selectedProducts.length,
+          itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
             return Card(
               child: ListTile(
